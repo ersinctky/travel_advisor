@@ -31,7 +31,7 @@ const App = () => {
       setPlaces(data);
       setIsLoading(false);
     });
-  }, [coords, bounds]);
+  }, [type, coords, bounds]);
 
   return (
     <>
