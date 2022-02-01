@@ -33,7 +33,7 @@ export const getWeatherData = async (lat, lng) => {
   try {
     if (lat && lng) {
       const { data } = await axios.get(
-        "https://community-open-weather-map.p.rapidapi.com/find",
+        "https://community-open-weather-map.p.rapidapi.com/weather",
         {
           params: { lat, lon: lng },
           headers: {
