@@ -1,10 +1,10 @@
 import React, { useState,useEffect,createRef} from 'react';
-import {  Grid, Typography, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
+import {  Grid, Typography, InputLabel, MenuItem, FormControl, Select, CircularProgress } from '@material-ui/core';
 
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 import useStyles from './styles.js';
 
-const List = ({places,childClicked}) => {
+const List = ({places,childClicked,isLoading}) => {
 
   const classes = useStyles();
   
@@ -23,7 +23,11 @@ const List = ({places,childClicked}) => {
   return (
     <div className={classes.container}>
       <Typography variant="h4">Food and  Dining around you</Typography>
-      
+      {isLoading ? (
+        <div className={classes.loading}>
+          <CircularProgress size="5rem" />
+        </div>
+      ) : (
       
         <>
           <FormControl className={classes.formControl}>
@@ -52,7 +56,10 @@ const List = ({places,childClicked}) => {
           </Grid>
         </>
       
-    </div>)}
+      )}
+      </div>
+    );
+  };
   
 
 export default List;
