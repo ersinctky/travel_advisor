@@ -58,7 +58,7 @@ const App = () => {
         setIsLoading(false);
       });
     }
-  }, [bounds, type, places]);
+  }, [bounds, type, places, coords]);
 
   return (
     <>
