@@ -4,12 +4,11 @@ import {  Grid, Typography, InputLabel, MenuItem, FormControl, Select, CircularP
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 import useStyles from './styles.js';
 
-const List = ({places,childClicked,isLoading}) => {
+const List = ({places,childClicked,isLoading,type,setType,rating,setRating}) => {
 
   const classes = useStyles();
   
-  const [type,setType]=useState("restaurants")
-  const [rating,setRating]=useState("")
+  
   const [elRefs, setElRefs] = useState([]);
 
   useEffect(() => {
